@@ -21,9 +21,9 @@ export const rendererConfig: Configuration = {
 export const rendererEntryPoints = [
   {
     html: './src/index.html',
-    js: './src/renderer.ts',
+    js: './src/renderer.ts', // TODO: change this!
     name: 'main_window',
     preload: {
-      js: './src/preload.ts',
+      js: './src/preload/preload.ts',
     },
   },]
