@@ -8,3 +8,4 @@ document.body.appendChild(rootElem)
 initializeApp(rootElem)
 
 console.log('[index.ts] initialized app')
+
