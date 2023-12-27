@@ -1,7 +1,7 @@
 import path from 'path'
 
 // eslint-disable-next-line import/default
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 
 export const webappConfig = {
@@ -31,14 +31,16 @@ export const webappConfig = {
   devServer: {
     static: './dist'
   },
-  plugins: [new CopyWebpackPlugin({
-    patterns: [{from: 'public'}]
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'my page'
+    }),
+  ],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
   },
   output: {
-    filename: 'bundle.js',
+    filename: './webapp/webapp.bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
 };

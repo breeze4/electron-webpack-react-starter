@@ -6,8 +6,8 @@
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
-    "serve": "webpack serve --open --config webpack.webapp.config.ts ",
-    "dev": "webpack --config webpack.webapp.config.ts",
+    "dev": "webpack serve --open --config webpack.webapp.config.ts ",
+    "build": "webpack --config webpack.webapp.config.ts",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -37,6 +37,7 @@
     "eslint": "^8.0.1",
     "eslint-plugin-import": "^2.25.0",
     "fork-ts-checker-webpack-plugin": "^7.2.13",
+    "html-webpack-plugin": "^5.6.0",
     "node-loader": "^2.0.0",
     "postcss-loader": "^7.3.3",
     "react": "^18.2.0",
