@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES6",
+    "lib": ["DOM", "ES2020", "ESNext", "WebWorker"],
     "allowJs": true,
     "module": "commonjs",
     "skipLibCheck": true,
@@ -11,6 +12,9 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
     "paths": {
       "*": ["node_modules/*"]
     }

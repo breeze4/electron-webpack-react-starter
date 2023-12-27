@@ -17,3 +17,13 @@ export const rendererConfig: Configuration = {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css'],
   },
 };
+
+export const rendererEntryPoints = [
+  {
+    html: './src/index.html',
+    js: './src/renderer.ts',
+    name: 'main_window',
+    preload: {
+      js: './src/preload.ts',
+    },
+  },]
