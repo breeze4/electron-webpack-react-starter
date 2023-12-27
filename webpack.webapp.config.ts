@@ -5,7 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 
 export const webappConfig = {
-  entry: './src/webapp/main.tsx',
+  entry: './src/webapp/index.ts',
   // Put your normal webpack config below here
   devtool: 'inline-source-map',
   mode: 'development',
@@ -33,7 +33,7 @@ export const webappConfig = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'my page'
+      title: 'webapp build'
     }),
   ],
   resolve: {

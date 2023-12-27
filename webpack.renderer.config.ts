@@ -1,10 +1,8 @@
 import path from 'path'
 import type { Configuration } from 'webpack';
-// eslint-disable-next-line import/default
-import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export const rendererConfig: Configuration = {
-  entry: './src/webapp/main.tsx',
+  entry: './src/webapp/index.ts',
   // Put your normal webpack config below here
   devtool: 'inline-source-map',
   mode: 'development',
@@ -27,10 +25,8 @@ export const rendererConfig: Configuration = {
         loader: 'svg-inline-loader'
       }],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'my page'
-    }),],
+  plugins: [ /* No HTMLWebpackPlugin needed, electron-forge will clobber this config and overrride with whats in the entrypoint html*/
+  ],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
   },
@@ -43,7 +39,7 @@ export const rendererConfig: Configuration = {
 export const rendererEntryPoints = [
   {
     html: './public/index.html',
-    js: './src/webapp/main.tsx',
+    js: './src/webapp/index.ts',
     name: 'main_window',
     preload: {
       js: './src/preload/preload.ts',

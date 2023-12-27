@@ -13,8 +13,8 @@ if (require('electron-squirrel-startup')) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    height: 800,
+    width: 1000,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
@@ -25,6 +25,8 @@ const createWindow = (): void => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  console.log('[electron:index.ts] initialized Electron and renderer')
 };
 
 // This method will be called when Electron has finished
@@ -48,6 +50,12 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+app.on('browser-window-focus', () => {
+  console.log('[electron:browser-window-focus] hello')
+  process.stdout.write('your output to command prompt console or node js ')
+  createWindow();
+})
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
