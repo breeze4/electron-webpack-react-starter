@@ -1,9 +1,10 @@
-import type { Configuration } from 'webpack';
-
 import path from 'path'
 
+// eslint-disable-next-line import/default
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-export const webappConfig: Configuration = {
+
+export const webappConfig = {
   entry: './src/webapp/main.tsx',
   // Put your normal webpack config below here
   devtool: 'inline-source-map',
@@ -27,7 +28,12 @@ export const webappConfig: Configuration = {
         loader: 'svg-inline-loader'
       }],
   },
-  plugins: [],
+  devServer: {
+    static: './dist'
+  },
+  plugins: [new CopyWebpackPlugin({
+    patterns: [{from: 'public'}]
+  })],
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
   },
